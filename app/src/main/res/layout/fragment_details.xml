@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/detailsToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:subtitleTextColor="@android:color/white"
+        app:titleTextColor="@android:color/white" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Fragments.DetailsFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".Fragments.DetailsFragment">
+
+
+            <ImageView
+                android:id="@+id/detailsAlbumArtImage"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/detailsAlbumName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:text="Album Name"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/detailsAlbumExcplicitImage"
+                app:layout_constraintStart_toEndOf="@+id/detailsAlbumArtImage"
+                app:layout_constraintTop_toTopOf="@+id/detailsAlbumArtImage" />
+
+            <ImageView
+                android:id="@+id/detailsAlbumExcplicitImage"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/explicit50"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/detailsAlbumName" />
+
+            <TextView
+                android:id="@+id/detailsAlbumArtist"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Artist"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/detailsAlbumName"
+                app:layout_constraintStart_toStartOf="@+id/detailsAlbumName"
+                app:layout_constraintTop_toBottomOf="@+id/detailsAlbumName" />
+
+            <TextView
+                android:id="@+id/detailsAlbumGenreAndReleaseDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Genre, release date"
+                app:layout_constraintEnd_toEndOf="@+id/detailsAlbumExcplicitImage"
+                app:layout_constraintStart_toStartOf="@+id/detailsAlbumArtist"
+                app:layout_constraintTop_toBottomOf="@+id/detailsAlbumArtist" />
+
+            <TextView
+                android:id="@+id/detailsAlbumPriceCurrency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="price currency"
+                app:layout_constraintEnd_toEndOf="@+id/detailsAlbumArtImage"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/detailsAlbumArtImage"
+                app:layout_constraintTop_toBottomOf="@+id/detailsAlbumArtImage" />
+
+            <TextView
+                android:id="@+id/detailsCountryCopyright"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Country, copyright"
+                app:layout_constraintEnd_toEndOf="@+id/detailsAlbumExcplicitImage"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/detailsAlbumPriceCurrency"
+                app:layout_constraintTop_toBottomOf="@+id/detailsAlbumPriceCurrency" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/tracksRecyclerView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="@+id/detailsAlbumExcplicitImage"
+                app:layout_constraintStart_toStartOf="@+id/detailsCountryCopyright"
+                app:layout_constraintTop_toBottomOf="@+id/detailsCountryCopyright"
+                tools:itemCount="100"
+                tools:listitem="@layout/track_rv_item" >
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
+

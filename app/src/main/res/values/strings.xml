@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ITunesAlbums</string>
+    <string name="commaSpace">,\ \</string>
+    <string name="space">\ \</string>
+    <string name="searchHint">enter album name</string>
+    <string name="start_search">click search icon to start</string>
+</resources>
